@@ -3,6 +3,7 @@ import "./Navbar.css";
 import logo from "../Assets/logo.png";
 import cart_icon from "../Assets/cart_icon.png";
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 export const Navbar = () => {
   const [menu, setMenu] = useState("shop");
@@ -25,6 +26,8 @@ export const Navbar = () => {
       window.removeEventListener("resize", handleResize);
     };
   }, []);
+
+  const cartLength = useSelector((state) => state.cartProducts.length);
   return (
     <div className={`navbar ${barButton ? "active" : ""}`}>
       <div className="nav-logo">
@@ -71,7 +74,7 @@ export const Navbar = () => {
           <Link to="/cart">
             <div className="image">
               <img src={cart_icon} alt="" />
-              <span>{3}</span>
+              <span>{cartLength}</span>
             </div>
           </Link>
         </div>

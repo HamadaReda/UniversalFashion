@@ -2,6 +2,7 @@
   display: flex;
   flex-direction: column;
   margin-bottom: 20px;
+  position: relative;
 }
 
 .item p {
@@ -11,6 +12,7 @@
 .item-prices {
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
 .item-prices .price {
@@ -18,32 +20,73 @@
   gap: 20px;
 }
 
-.price .item-price-new {
+.item .count {
+  margin-bottom: 15px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.price .item-price-old {
   color: #374151;
   font-size: 18px;
   font-weight: 600;
 }
 
-.price .item-price-new {
+.price .item-price-old {
   color: #8c8c8c;
   font-size: 18px;
   font-weight: 500;
   text-decoration: line-through;
 }
 
-.item-prices .cart {
+.item .add-btn,
+.item .increase-btn,
+.item .decrease-btn,
+.item .delete-btn {
   cursor: pointer;
   border: none;
   background: transparent;
-  margin-right: 30px;
-}
-
-.item-prices .cart svg {
-  font-size: 35px;
+  border-radius: 5px;
+  padding-inline: 10px;
   transition: 0.3s;
 }
-.item-prices .cart svg:hover {
+
+.item .increase-btn,
+.item .decrease-btn {
+  background-color: #777;
+  color: white;
+}
+
+.item .delete-btn {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background-color: red;
+  color: white;
+}
+
+.item .add-btn,
+.item .increase-btn {
+  margin-right: 10px;
+}
+
+.item .decrease-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.item .add-btn:hover,
+.item .increase-btn:hover,
+.item .decrease-btn:hover,
+.item .delete-btn:hover {
   transform: scale(1.1);
+}
+
+.item .add-btn svg,
+.item .increase-btn svg,
+.item .decrease-btn svg,
+.item .delete-btn svg {
+  font-size: 35px;
 }
 
 .item:hover {

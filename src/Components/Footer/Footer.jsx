@@ -30,7 +30,13 @@ export const Footer = () => {
         <hr />
         <p>Copyright 2024 - All Right Reserved to</p>
         <p>
-          <a href="#">Eng. Hamada Reda</a>
+          <a
+            href="https://github.com/HamadaReda/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Eng. Hamada Reda
+          </a>
         </p>
       </div>
     </div>

@@ -1,10 +1,11 @@
 import "./ShopCategory.css";
 
 import dropdown_icon from "../Components/Assets/dropdown_icon.png";
-import all_products from "../Components/Assets/all_products";
 import { Items } from "../Components/Items/Items";
+import { useSelector } from "react-redux";
 
 const ShopCategory = (props) => {
+  const all_products = useSelector((state) => state.allProducts);
   let target = all_products.filter((item) => item.category === props.category);
   return (
     <div className="shop-category">
@@ -19,16 +20,7 @@ const ShopCategory = (props) => {
       </div>
       <div className="shopcategory-products">
         {target.map((item, i) => {
-          return (
-            <Items
-              key={i}
-              id={item.id}
-              name={item.name}
-              image={item.image}
-              new_price={item.new_price}
-              old_price={item.old_price}
-            />
-          );
+          return <Items key={i} product={item} />;
         })}
       </div>
     </div>

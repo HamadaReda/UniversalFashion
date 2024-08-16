@@ -8,6 +8,7 @@ import { Footer } from "./Components/Footer/Footer";
 import men_banner from "./Components/Assets/banner_mens.png";
 import women_banner from "./Components/Assets/banner_women.png";
 import kid_banner from "./Components/Assets/banner_kids.png";
+import Cart from "./Pages/Cart";
 function App() {
   return (
     <div>
@@ -27,6 +28,7 @@ function App() {
             path="/kids"
             element={<ShopCategory banner={kid_banner} category="kid" />}
           />
+          <Route path="/cart" element={<Cart />} />
           <Route path="/product" element={<Product />} />
           <Route path=":productId" element={<Product />} />
         </Routes>
