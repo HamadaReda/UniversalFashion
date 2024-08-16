@@ -1,0 +1,26 @@
+.container {
+  margin-inline: 20px;
+}
+@media (min-width: 576px) {
+  .container {
+    margin-inline: 40px;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    margin-inline: 50px;
+  }
+}
+
+@media (min-width: 992px) {
+  .container {
+    margin-inline: 80px;
+  }
+}
+
+@media (min-width: 1400px) {
+  .container {
+    margin-inline: 100px;
+  }
+}
